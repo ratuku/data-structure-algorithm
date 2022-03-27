@@ -59,4 +59,76 @@ public class reverseNodesInKGroup_25 {
 
         return new_head;
     }
+
+    public ListNode reverseLinkedList(ListNode head, int k) {
+
+        ListNode new_head = null;
+
+        ListNode ptr = head;
+
+        while (k>0) {
+            ListNode next_node = ptr.next;
+
+
+            ptr.next = new_head;
+            new_head = ptr;
+
+            // move to the next node
+            ptr = next_node;
+
+
+            k--;
+        }
+
+        return new_head;
+
+    }
+
+    public ListNode reverseKGroup(ListNode head, int k) {
+
+        ListNode ktail = null;
+        ListNode ptr = head;
+
+        // return new_head
+        ListNode new_head = null;
+
+        // loop over ptr...
+        while (ptr!=null) {
+
+            int count = 0;
+
+            // start counting nodes from the head
+            ptr = head;
+
+            // find the head of the next k nodes
+            while (count < k && ptr !=null ) {
+                ptr = ptr.next;
+                count ++;
+            }
+
+            // if we counted k nodes, reverse them,
+            if (count==k) {
+
+                // reverse
+                ListNode revHead = reverseLinkedList(head, k);
+
+                // if newhead is null
+                if (new_head == null) new_head = revHead;
+
+                // ktail is the tail of the previous block
+                if (ktail !=null) ktail.next = revHead;
+
+                ktail =  head;
+                head = ptr;
+            }
+
+
+        }
+
+        // attach the final, possibly un-reversed portion
+        if (ktail!=null) ktail.next = head;
+
+        return new_head == null ? head : new_head;
+
+    }
 }
