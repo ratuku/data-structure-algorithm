@@ -72,6 +72,33 @@ public class SolutionMerge2NonDecreasingLinkedList_21 {
 
     }
 
+    public ListNode mergeTwoListsRecursion(ListNode list1, ListNode list2) {
+        // base case
+        if  (list1 == null) return list2;
+        if (list2 == null) return list1;
+
+        // recursion..  compare the two heads
+        ListNode headnode;
+
+
+        if(list1.val<list2.val) {
+            headnode = list1;
+            list1 = list1.next;
+        }
+        else {
+            headnode = list2;
+            list2 = list2.next;
+        }
+
+        // call the next recursion call
+
+        headnode.next = mergeTwoListsRecursion(list1, list2);
+
+        // a return statement
+        return headnode;
+
+    }
+
 
     public class ListNode { int val;
         ListNode next;
