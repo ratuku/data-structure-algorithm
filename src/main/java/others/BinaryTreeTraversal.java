@@ -56,6 +56,7 @@ public class BinaryTreeTraversal {
 
 class Node {
     int val;
+    boolean marked;
 
     Node right;
     Node left;
