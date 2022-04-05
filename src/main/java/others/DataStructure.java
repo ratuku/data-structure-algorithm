@@ -53,7 +53,14 @@ public class DataStructure {
             Object item = iterator.next();
         }
 
-        // PriorityQueue
+        // PriorityQueue: It provides O(log(n)) time for add and poll methods.
+        PriorityQueue<String> stringPriorityQueue = new PriorityQueue<>();
+        PriorityQueue<Integer> integerQue =  new PriorityQueue<>((o1, o2) -> {
+            return o1*o1;
+        });
+        integerQue.add(4);
+        integerQue.add(9);
+        System.out.println(integerQue);
 
         // ArrayList
         ArrayList<String> list1 = new ArrayList<>();
