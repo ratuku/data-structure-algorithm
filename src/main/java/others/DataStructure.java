@@ -38,9 +38,9 @@ public class DataStructure {
         Queue queue = new ArrayDeque();
         queue.offer("ok"); // adds rom the back. add()
         queue.offer("ok2");
-        queue.poll(); // from the front. remove()
+        // queue.poll(); // from the front. remove()
         queue.peek(); // retrieves the head.in the front
-        System.out.println("queue: " + queue.peek());
+        System.out.println("queue: " + queue.poll());
 
         for (Object item: queue) {
 
@@ -58,8 +58,9 @@ public class DataStructure {
         PriorityQueue<Integer> integerQue =  new PriorityQueue<>((o1, o2) -> {
             return o1*o1;
         });
-        integerQue.add(4);
-        integerQue.add(9);
+        integerQue.add(4); // offer
+        integerQue.add(9); // peek, front element in the priorityQueue
+        // Iterator doesn't keep the order of the Queue..
         System.out.println(integerQue);
 
         // ArrayList
