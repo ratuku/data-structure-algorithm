@@ -6,7 +6,7 @@ import java.util.stream.StreamSupport;
 public class DataStructure {
 
     public static void main (String...  args) {
-        // array
+       /* // array
         int size = 5;
         int [] array1 = new int[size];
         int [] array2 = {10,5,2,5};
@@ -79,5 +79,28 @@ public class DataStructure {
 
         // map
         HashMap<String, String> map = new HashMap<>();
+*/
+        // More PriorityQueue
+        PriorityQueue<Integer> heap = new PriorityQueue<>((a, b) -> b - a); // > 0 . b is
+        int[] stones = new int[]{2,7,4,1,8,1};
+
+        for (int stone: stones) {
+            heap.add(stone);
+        }
+
+        while (!heap.isEmpty()) {
+            System.out.println(heap.poll());
+        }
+
+        // CompareTo
+        // compareTo(a,b) <0, a is less than, >0; b is greater than
+        // priorityQueue has it in ascending order. so it starts off with low priority to highest priority.
+        // hence if we want an integer in descending order (b -a). smallest int now has the highest priority hence will be shown later
+        PriorityQueue<Node> pq = new PriorityQueue<Node>( new Comparator<Node>() {
+            public int compare(Node n1, Node n2) {
+                // compare n1 and n2
+                return 0;
+            }
+        });
     }
 }
