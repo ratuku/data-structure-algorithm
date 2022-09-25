@@ -33,6 +33,17 @@ public class ReverseLinkedList {
         ReverseLinkedList reverseLinkedList = new ReverseLinkedList();
         reverseLinkedList.reverseRecursion(head);
     }
+
+
+    public static void main(char[] args) {
+
+        NodeRight head = new NodeRight(10);
+        head.right = new NodeRight(5);
+        head.right.right = new NodeRight(15);
+
+        ReverseLinkedList reverseLinkedList = new ReverseLinkedList();
+        reverseLinkedList.reverseRecursion(head);
+    }
 }
 
 class NodeRight {

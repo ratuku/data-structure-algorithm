@@ -1,15 +1,16 @@
 package others;
 
 import java.util.*;
-import java.util.stream.StreamSupport;
 
 public class DataStructure {
 
     public static void main (String...  args) {
-       /* // array
+        // array
         int size = 5;
         int [] array1 = new int[size];
         int [] array2 = {10,5,2,5};
+
+        // Integer.MAX_VALUE; Integer.MIN_VALUE;
 
         // list
         List<Integer> list = new ArrayList<>();
@@ -79,9 +80,8 @@ public class DataStructure {
 
         // map
         HashMap<String, String> map = new HashMap<>();
-*/
         // More PriorityQueue
-        PriorityQueue<Integer> heap = new PriorityQueue<>((a, b) -> b - a); // > 0 . b is
+        /*PriorityQueue<Integer> heap = new PriorityQueue<>((a, b) -> b - a); // > 0 . b is greater.
         int[] stones = new int[]{2,7,4,1,8,1};
 
         for (int stone: stones) {
@@ -90,10 +90,10 @@ public class DataStructure {
 
         while (!heap.isEmpty()) {
             System.out.println(heap.poll());
-        }
+        }*/
 
         // CompareTo
-        // compareTo(a,b) <0, a is less than, >0; b is greater than
+        // compareTo(a,b) <0, a is less than 0 then b is greater. >0 then a is greater
         // priorityQueue has it in ascending order. so it starts off with low priority to highest priority.
         // hence if we want an integer in descending order (b -a). smallest int now has the highest priority hence will be shown later
         PriorityQueue<Node> pq = new PriorityQueue<Node>( new Comparator<Node>() {
@@ -102,5 +102,16 @@ public class DataStructure {
                 return 0;
             }
         });
+
+        PriorityQueue<Integer> priorityQueue = new PriorityQueue<>( new Comparator<Integer>() {
+                public int compare(Integer a, Integer b) {
+                    return b - a;
+            }
+        });
+        priorityQueue.add(1);
+        priorityQueue.add(2);
+        priorityQueue.add(10);
+        System.out.println(priorityQueue.peek());
+
     }
 }

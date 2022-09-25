@@ -65,3 +65,10 @@ class Node {
         this.val = val;
     }
 }
+
+class Graph {
+
+    private String value;
+    Node [] children;
+
+}

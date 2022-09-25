@@ -29,8 +29,8 @@ public class DFS {
 
     void search(Node node) {
         // base case
-        nodes = new Stack<>();
-        nodes.push(node);
+        // nodes = new Stack<>();
+        //nodes.push(node);
 
         helper(node);
     }
